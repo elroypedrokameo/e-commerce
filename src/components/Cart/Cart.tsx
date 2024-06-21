@@ -8,7 +8,7 @@ function Cart() {
   const navigate = useNavigate();
 
   const [cart, setCart] = useState<CartProduct[]>([]);
-  const [selectedProduct, setSelectedProduct] = useState()
+  // const [selectedProduct, setSelectedProduct] = useState()
 
   const buyProduct = () => {
     navigate('/checkout')
