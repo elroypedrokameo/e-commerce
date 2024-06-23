@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "../Header";
 import { useEffect, useState } from "react";
 import { CartProduct, productType } from "../type";
@@ -35,7 +35,7 @@ function DetailProduct() {
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
-    
+
     navigate('/cart')
   }
 
@@ -67,7 +67,7 @@ function DetailProduct() {
   return (
     <>
       <Header />
-      <div className="m-auto my-5 max-w-container flex gap-5">
+      <div className="m-auto my-5 max-w-container flex justify-between gap-5">
         <div>
           <img src={product.productImage} alt={product.productName} />
         </div>
@@ -91,7 +91,7 @@ function DetailProduct() {
             <p>{product.productDetail}</p>
           </div>
         </div>
-        <div className="rounded-lg product-card p-5">
+        <div className="rounded-lg product-card p-5 h-max max-w-[250px]">
           <h3 className="font-bold text-base">Atur Jumlah</h3>
           <div className="mt-4">
             <Counter count={count} productStock={product.productStock} increment={increment} decrement={decrement} />
@@ -103,8 +103,13 @@ function DetailProduct() {
                 onClick={() => addToCart(product, count, count * product.productPrice)}
               >Tambah Keranjang</button>
             </div>
-            <div >
-              <button className="border border-green-500 rounded-md p-2 w-full text-center">Beli Langsung</button>
+            <div className="w-full">
+              <Link
+                to="/checkout"
+                className="border flex border-green-500 rounded-md p-2 w-full justify-center"
+              >
+                Beli Langsung
+              </Link>
             </div>
           </div>
         </div>

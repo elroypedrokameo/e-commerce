@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-function Header() {
+type headerTypes = {
+  isHomePage?: boolean;
+  onSearch?: (query: string) => void;
+}
+
+const Header: React.FC<headerTypes> = ({ isHomePage, onSearch }) => {
   const listMenuHeader = [
     {
       id: "1",
@@ -29,11 +35,33 @@ function Header() {
     },
   ]
 
+  const [query, setQuery] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setQuery(value);
+
+    if (onSearch) {
+      onSearch(value)
+    }
+  }
+
   return (
     <header className="shadow-lg p-5">
       <div className="flex items-center justify-between max-w-container mx-auto">
-        <div>
+        <div className="flex items-center gap-8">
           <Link to="/">E-Commerce</Link>
+          {isHomePage ? (
+            <div className="search">
+              <input
+                type="text"
+                onChange={handleChange}
+                value={query}
+                placeholder="Cari Di E-Commerce"
+                className="border border-black rounded-md p-2 w-80"
+              />
+            </div>
+          ) : null}
         </div>
         <div className="flex gap-5">
           {listMenuHeader.map((item) => (
@@ -44,7 +72,6 @@ function Header() {
             </nav>
           ))}
         </div>
-
       </div>
     </header>
   )

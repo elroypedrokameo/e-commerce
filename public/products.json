@@ -102,5 +102,18 @@
     "productNumberOfRatings": "97",
     "productStock": 20,
     "productDetail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore aliquam quas maxime? Ducimus officia dolorum perspiciatis totam delectus saepe, exercitationem enim dicta placeat quam, ad, illo laudantium quae explicabo. Cumque?"
+  },
+  {
+    "productId": "9",
+    "productName": "Monitor Gaming",
+    "productPrice": 2380000,
+    "productImage": "https://images.tokopedia.net/img/cache/300-square/VqbcmM/2024/5/20/733f946d-2479-4157-992e-e0feaaeda27e.jpg",
+    "productCategory": "Monitor",
+    "productSold": "150",
+    "sellerCity": "Bandung",
+    "productRatings": "4.5",
+    "productNumberOfRatings": "97",
+    "productStock": 10,
+    "productDetail": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore aliquam quas maxime? Ducimus officia dolorum perspiciatis totam delectus saepe, exercitationem enim dicta placeat quam, ad, illo laudantium quae explicabo. Cumque?"
   }
 ]
