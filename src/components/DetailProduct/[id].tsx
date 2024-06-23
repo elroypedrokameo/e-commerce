@@ -22,7 +22,7 @@ function DetailProduct() {
   };
 
 
-  const addToCart = (product: productType, qty: number, totalPrice: any) => {
+  const addToCart = (product: productType, qty: number, totalPrice: number) => {
     let cart: CartProduct[] = JSON.parse(localStorage.getItem('cart') || '[]');
     const existingProductIndex = cart.findIndex(item => item.productId === product.productId);
 
