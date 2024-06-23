@@ -67,7 +67,7 @@ function DetailProduct() {
   return (
     <>
       <Header />
-      <div className="m-auto my-5 max-w-container flex gap-5">
+      <div className="m-auto my-5 max-w-container flex justify-between gap-5">
         <div>
           <img src={product.productImage} alt={product.productName} />
         </div>
@@ -91,7 +91,7 @@ function DetailProduct() {
             <p>{product.productDetail}</p>
           </div>
         </div>
-        <div className="rounded-lg product-card p-5 h-max max-w-[200px]">
+        <div className="rounded-lg product-card p-5 h-max max-w-[250px]">
           <h3 className="font-bold text-base">Atur Jumlah</h3>
           <div className="mt-4">
             <Counter count={count} productStock={product.productStock} increment={increment} decrement={decrement} />
